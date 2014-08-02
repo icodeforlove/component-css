@@ -1,4 +1,4 @@
-# Component CSS (CCSS)
+# Component CSS (CCSS) [![Build Status](https://travis-ci.org/icodeforlove/component-css.png?branch=master)](https://travis-ci.org/icodeforlove/component-css)
 
 introduces the @component selector to CSS.
 
