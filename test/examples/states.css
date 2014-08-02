@@ -1,0 +1,11 @@
+@component One {
+  state::active {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  .content state::hover::active {
+    width: 100%;
+  }
+}

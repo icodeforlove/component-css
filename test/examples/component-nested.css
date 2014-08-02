@@ -1,0 +1,14 @@
+@component One {
+  .content {
+    width: 100%;
+  }
+  .content .one {
+    width: 100%;
+  }
+  .content .one .two {
+    width: 100%;
+  }
+  .content .one .two .three {
+    width: 100%;
+  }
+}

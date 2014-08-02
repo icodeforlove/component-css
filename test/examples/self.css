@@ -1,0 +1,8 @@
+@component One {
+  self {
+    width: 100%;
+  }
+  self:hover {
+    width: 100%;
+  }
+}

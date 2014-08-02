@@ -1,0 +1,42 @@
+@component One {
+  .content {
+    width: 100%;
+  }
+  .content .one {
+    width: 100%;
+  }
+  .content .one .two {
+    width: 100%;
+  }
+  .content .one .two .three {
+    width: 100%;
+  }
+}
+@component Two {
+  .content {
+    width: 100%;
+  }
+  .content .one {
+    width: 100%;
+  }
+  .content .one .two {
+    width: 100%;
+  }
+  .content .one .two .three {
+    width: 100%;
+  }
+}
+@component Three {
+  .content {
+    width: 100%;
+  }
+  .content .one {
+    width: 100%;
+  }
+  .content .one .two {
+    width: 100%;
+  }
+  .content .one .two .three {
+    width: 100%;
+  }
+}

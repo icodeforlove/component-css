@@ -1,0 +1,15 @@
+@component One {
+  .content {
+    width: 100%;
+  }
+}
+@component Two {
+  .content {
+    width: 100%;
+  }
+}
+@component Three {
+  .content {
+    width: 100%;
+  }
+}
