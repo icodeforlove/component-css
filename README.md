@@ -82,7 +82,7 @@ states reference the overall component state
 ## usage 
 
 ```
-var ccss = require('component-css');
+var ccss = require('node-component-css');
 
 ccss(/* Component Name */, /* source */, /* options */);
 ```

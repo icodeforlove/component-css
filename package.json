@@ -1,5 +1,5 @@
 {
-  "name": "css-components",
+  "name": "node-component-css",
   "description": "introduces the @component selector to CSS",
   "version": "0.0.0",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/icodeforlove/css-components.git"
+    "url": "git://github.com/icodeforlove/component-css.git"
   },
   "dependencies": {
     "node-balanced": "0.0.7"
