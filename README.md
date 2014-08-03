@@ -84,11 +84,10 @@ states reference the overall component state
 ```
 var ccss = require('node-component-css');
 
-ccss(/* Component Name */, /* source */, /* options */);
+ccss({
+  data: {String}, // required
+  name: {String}, // (optional) required when using unamed components
+  header: {Boolean}, // (optional, default true) show/hide component comment headers,
+  spacing: {String} // (optional, default '  ') property spacing
+});
 ```
-
-### options
-
-- prefix (string)
-- spacing (string)
-- header (bool)

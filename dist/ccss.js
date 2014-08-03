@@ -1,5 +1,5 @@
 /**
- * ccss.js v0.0.2
+ * ccss.js v0.0.3
  */
 var ccss =
 /******/ (function(modules) { // webpackBootstrap
@@ -194,13 +194,21 @@ var ccss =
 		return css;
 	}
 	
-	module.exports = function (name, css, config) {
+	module.exports = function (config) {
 		config = config || {};
 		config.prefix = config.prefix || '';
 		config.spacing = config.spacing || '  ';
 		config.header = config.header !== undefined ? config.header : true;
-		parseComponents(name, css, config);
-		return parseComponents(name, css, config);
+	
+		if (!config.data) {
+			throw new Error('ComponentCSS: you must specify a "data" property');
+		}
+	
+		return parseComponents(config.name, config.data, {
+			prefix: config.prefix,
+			spacing: config.spacing,
+			header: config.header
+		});
 	};
 
 /***/ },

@@ -1,7 +1,7 @@
 {
   "name": "node-component-css",
   "description": "introduces the @component selector to CSS",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
