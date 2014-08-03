@@ -42,7 +42,7 @@ CCSS is meant to be used in conjunction with a DOM helper, so you don't have to 
 
 CCSS is also meant to be used after a CSS preprocessor
 
-- stylus?
+- [stylus](https://github.com/icodeforlove/component-css-stylus)
 - scss?
 - less?
 
