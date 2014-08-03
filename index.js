@@ -1,4 +1,5 @@
-var balanced = require('node-balanced');
+var balanced = require('node-balanced'),
+	cssbeautify = require('cssbeautify');
 
 function toHyphenDelimited (string) {
 	return string.replace(/([a-z][A-Z])/g, function (g) {
@@ -19,9 +20,13 @@ function parseComponents (name, css, config) {
 	    replace: function (source, head, tail) {
 			var componentName = head.match(headRegExp)[1].trim() || name;
 
+			source = cssbeautify(source, {autosemicolon: true});
+
 			source = source.replace(trimRegExp, '$1');
+			source = source.replace(/\}/g, '}\n');
 			source = parseComponent(toHyphenDelimited(componentName), source, config);
-			source = source.replace(/\n{2,}/, '\n');
+			source = cssbeautify(source, {autosemicolon: true, indent: config.spacing});
+			source = source.replace(/\n{2,}/g, '\n');
 
 			if (config.header) {
 				var header = '/* Component CSS for ' + componentName + ' */\n';
@@ -38,7 +43,7 @@ function parseComponent (name, css, config) {
 	css = replaceComponentPseudoSelectors(name, css, config);
 	css = replaceComponentProperties(name, css, config);
 
-	return css;
+	return css.trim();
 }
 
 function replaceSelectors(name, css, config) {
@@ -62,7 +67,7 @@ function replaceSelectors(name, css, config) {
 			// prefix all remaining selectors that are not already
 			selector = selector.replace(classRegExp, '$1' + config.prefix + name + '_$2');
 
-			return selector.trim('');
+			return selector.trim();
 		});
 
 		return selectors.join(', ') + ' {';
@@ -123,17 +128,17 @@ function replaceComponentProperties(name, css, config) {
 		// if we are nested we should skip this step
 		for (var i = 0; i < blocks.length; i++) {
 			if (index >= blocks[i].index && (index + match.length) <= (blocks[i].index + blocks[i].length)) {
-				return config.spacing + match;
+				return match;
 			}
 		}
 
-		componentProperties += config.spacing + name + ': ' + value + ';\n';
+		componentProperties += name + ': ' + value + ';\n';
 
 		return '';
 	});
 
 	if (componentProperties) {
-		css = '.' + config.prefix + 'component.' + config.prefix + name + ' {\n' + config.spacing + componentProperties.trim() + '\n}\n' + css;
+		css = '.' + config.prefix + 'component.' + config.prefix + name + ' {\n' + componentProperties.trim() + '\n}\n' + css;
 	}
 
 	return css;
