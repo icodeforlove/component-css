@@ -4,6 +4,8 @@ introduces the @component selector to CSS.
 
 **this was originally released as a react specific CSS preprocessor of its own, but it is being transitioned to be a generic concept**
 
+**This is not done its still a WIP**
+
 ## why?
 
 as we start to develop websites in a modular way with nested components it starts to make sense to have your selectors only effect the component you're targeting, and not have to worry about naming collisions.
