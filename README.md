@@ -78,7 +78,7 @@ states reference the overall component state
 ## install
 
 ```
-	npm install component-css
+	npm install node-component-css
 ```
 
 ## usage 
